@@ -20,7 +20,9 @@ metadata:
     {{ include "cost-analyzer.commonLabels" . | nindent 4 }}
   {{- with .Values.ingress.annotations }}
   annotations:
-    {{- toYaml . | nindent 4 }}
+    {{- range $k, $v := . }}
+    {{ printf "%s: %s" $k (quote $v) }}
+    {{- end }}
   {{- end }}
 spec:
 {{- if .Values.ingress.className }}

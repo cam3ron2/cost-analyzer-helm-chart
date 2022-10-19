@@ -1,0 +1,5 @@
+exclude:
+  - cost-analyzer/
+  - historical-builds/
+
+theme: jekyll-theme-cayman
